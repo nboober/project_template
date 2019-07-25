@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:insert="base :: head"></head>
+<body>
+
+    <p th:text="${message}"></p>
+
+    <h2>Insecure Page</h2>
+    <a href="/secure">Secure Page</a>
+
+<div th:insert="base :: javascript"></div>
+</body>
+</html>

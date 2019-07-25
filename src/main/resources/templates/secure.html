@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:insert="base :: head"></head>
+<body>
+
+    <h3>Secure Page</h3>
+    <a href="/logout">Logout</a>
+
+    <h4>Email</h4>
+    <p th:text="${user.email}"></p>
+
+    <h4>Last Name</h4>
+    <p th:text="${user.lastName}"></p>
+
+<div th:insert="base :: javascript"></div>
+</body>
+</html>
