@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +18,11 @@
         <img src="#" width="auto" height="50" class="d-inline-block align-top" alt="image">
         <span class="fancy-writing">Nav Title</span>
     </a>
+    <!--If the user is logged in this link will be visible-->
+    <a sec:authorize="isAuthenticated()" href="#">Link</a>
+
+    <!--The user needs a certain role to see this link (USER)-->
+    <a sec:authorize="hasAuthority('USER')" href="#">Link</a>
     <a href="#">Link</a>
     <a href="#">Link</a>
 </nav>
