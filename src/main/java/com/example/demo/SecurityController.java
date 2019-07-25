@@ -10,7 +10,7 @@ import javax.validation.Valid;
 import java.security.Principal;
 
 @Controller
-public class HomeController {
+public class SecurityController {
 
     @Autowired
     UserRepository userRepository;
@@ -18,20 +18,14 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
-    //Home
-    @RequestMapping("/")
-    public String index(){
-        return "index";
-    }
-
-    //Register Page
+    //Register Page Create User
     @GetMapping(value = "/register")
     public String showRegistration(Model model){
         model.addAttribute("user", new User());
         return "registration";
     }
 
-
+    //Register Page Validation
     @PostMapping(value = "/register")
     public String processRegistration(@Valid
                                       @ModelAttribute("user") User user, BindingResult result, Model model){
@@ -47,16 +41,19 @@ public class HomeController {
 
     }
 
+    //Login Page
     @RequestMapping("/login")
     public String login(){
         return "login";
     }
 
+    //Admin Page
     @RequestMapping("/admin")
     public String admin(){
         return "admin";
     }
 
+    //Secure Page
     @RequestMapping("/secure")
     public String secure(Principal principal, Model model){
         String username = principal.getName();

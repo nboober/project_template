@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-<head th:insert="base :: head"></head>
+<head th:replace="base :: head"></head>
 <body>
+<nav th:replace="base :: navbar"></nav>
 
 <h4>New User Registration</h4>
 
@@ -61,6 +62,6 @@
 
 </form>
 
-<div th:insert="base :: javascript"></div>
+<div th:replace="base :: javascript"></div>
 </body>
 </html>

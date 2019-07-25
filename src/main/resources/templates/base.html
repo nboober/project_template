@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Title</title>
+    <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--My Css-->
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
 
+<!-- Image and text Nav Bar-->
+<nav class="navbar navbar-dark bg-dark" th:fragment="navbar">
+    <a class="navbar-brand" href="/">
+        <img src="#" width="auto" height="50" class="d-inline-block align-top" alt="image">
+        <span class="fancy-writing">Nav Title</span>
+    </a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+</nav>
+<!--End of Nav Bar-->
 
 <div th:fragment="javascript">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-<head th:insert="base :: head"></head>
+<head th:replace="base :: head"></head>
 <body>
+<nav th:replace="base :: navbar"></nav>
 
     <h2>Admin Page!</h2>
 
-<div th:insert="base :: javascript"></div>
+<div th:replace="base :: javascript"></div>
 </body>
 </html>
