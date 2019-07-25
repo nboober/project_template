@@ -19,10 +19,10 @@
         <span class="fancy-writing">Nav Title</span>
     </a>
     <!--If the user is logged in this link will be visible-->
-    <a sec:authorize="isAuthenticated()" href="#">Link</a>
+    <a sec:authorize="isAuthenticated()" href="#">Ur Logged In</a>
 
     <!--The user needs a certain role to see this link (USER)-->
-    <a sec:authorize="hasAuthority('USER')" href="#">Link</a>
+    <a sec:authorize="hasAuthority('USER')" href="#">User Eyes Only</a>
     <a href="#">Link</a>
     <a href="#">Link</a>
 </nav>
