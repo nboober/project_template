@@ -8,11 +8,11 @@
     <p th:text="${message}"></p>
 
     <p sec:authorize="isAuthenticated()">
-        Welcome <span th:text="${#authentication.name}"></span> // only show when authenticated
+        Welcome <span th:text="${#authentication.name}"></span> <!--only show when authenticated-->
     </p>
 
     <p>
-        Welcome <span sec:authentication="name"></span> // shows name regardless of anonymity
+        Welcome <span sec:authentication="name"></span> <!--shows name regardless of anonymity-->
     </p>
 
     <h2>Insecure Page</h2>
