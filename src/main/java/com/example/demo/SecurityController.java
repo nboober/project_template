@@ -61,11 +61,11 @@ public class SecurityController {
     }
 
     //Secure Page
-    @RequestMapping("/secure")
+    @RequestMapping("/userProfile")
     public String secure(Principal principal, Model model){
         String username = principal.getName();
         model.addAttribute("user", userRepository.findByUsername(username));
-        return "secure";
+        return "userProfile";
     }
 
 }

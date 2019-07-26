@@ -25,7 +25,7 @@
     <a sec:authorize="hasAuthority('USER')" href="#">USER Eyes Only</a>
     <a sec:authorize="hasAuthority('ADMIN')" href="/admin">ADMIN Eyes Only</a>
     <a href="#">Link</a>
-    <a href="#">Link</a>
+    <a sec:authorize="!isAuthenticated()" href="/Login">Login</a>
 </nav>
 <!--End of Nav Bar-->
 
