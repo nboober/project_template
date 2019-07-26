@@ -8,11 +8,27 @@
     <h3>Secure Page</h3>
     <a href="/logout">Logout</a>
 
-    <h4>Email</h4>
-    <p th:text="${user.email}"></p>
+<h4>First Name</h4>
+<p th:text="${user.firstName}"></p>
 
-    <h4>Last Name</h4>
-    <p th:text="${user.lastName}"></p>
+<h4>Last Name</h4>
+<p th:text="${user.lastName}"></p>
+
+<h4>Email</h4>
+<p th:text="${user.email}"></p>
+
+<h4>Username</h4>
+<p th:text="${user.username}"></p>
+
+<h4>Password</h4>
+<p th:text="${user.password}"></p>
+
+<h4>Roles</h4>
+<div th:each="role : ${user.getRoles()}">
+    <p th:text="${role.getRole()}"></p>
+</div>
+
+<a th:href="@{/update/{id} (id=${user.id})}">Update Profile</a>
 
 <div th:replace="base :: javascript"></div>
 </body>
