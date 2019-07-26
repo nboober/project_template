@@ -16,10 +16,7 @@ public class HomeController {
 
     //Home
     @RequestMapping("/")
-    public String index(Model model){
-        if(userService.getUser() != null) {
-            model.addAttribute("user_id", userService.getUser().getId());
-        }
+    public String index(){
         return "index";
     }
 
