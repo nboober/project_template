@@ -7,6 +7,25 @@
 
     <h2>Admin Page!</h2>
 
+<table>
+    <th>Users First Name</th>
+    <th>Users Last Name</th>
+    <th>Users Email</th>
+    <th>Users Username</th>
+    <th>Users Password</th>
+    <th>Users Roles</th>
+    <th>Action</th>
+        <tr th:each="user : ${users}">
+            <td th:text="*{user.firstName}"></td>
+            <td th:text="*{user.lastName}"></td>
+            <td th:text="*{user.email}"></td>
+            <td th:text="*{user.username}"></td>
+            <td th:text="*{user.password}"></td>
+            <td th:text="*{user.roles}"></td>
+        </tr>
+</table>
+
+
 <div th:replace="base :: javascript"></div>
 </body>
 </html>

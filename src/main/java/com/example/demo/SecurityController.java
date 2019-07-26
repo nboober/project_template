@@ -18,6 +18,9 @@ public class SecurityController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    RoleRepository roleRepository;
+
     //Register Page Create User
     @GetMapping(value = "/register")
     public String showRegistration(Model model){
@@ -50,7 +53,10 @@ public class SecurityController {
 
     //Admin Page
     @RequestMapping("/admin")
-    public String admin(){
+    public String admin(Model model){
+        model.addAttribute("users", userRepository.findAll());
+        model.addAttribute("roles", roleRepository.findAll());
+
         return "admin";
     }
 

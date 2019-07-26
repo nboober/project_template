@@ -23,7 +23,7 @@
 
     <!--The user needs a certain role to see this link (USER)-->
     <a sec:authorize="hasAuthority('USER')" href="#">USER Eyes Only</a>
-    <a sec:authorize="hasAuthority('ADMIN')" href="#">ADMIN Eyes Only</a>
+    <a sec:authorize="hasAuthority('ADMIN')" href="/admin">ADMIN Eyes Only</a>
     <a href="#">Link</a>
     <a href="#">Link</a>
 </nav>
