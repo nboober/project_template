@@ -45,7 +45,8 @@ public class UserService {
     }
 
     public void saveAdmin(User user){
-        user.setRoles(Arrays.asList(roleRepository.findByRole("ADMIN")));
+        //Admin has both user and admin roles
+        user.setRoles(Arrays.asList(roleRepository.findByRole("ADMIN"), roleRepository.findByRole("USER")));
 
         user.setEnabled(true);
         userRepository.save(user);
