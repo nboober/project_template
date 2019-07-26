@@ -8,13 +8,13 @@
     <h2>Admin Page!</h2>
 
 <table>
-    <th>Users First Name</th>
-    <th>Users Last Name</th>
-    <th>Users Email</th>
-    <th>Users Username</th>
-    <th>Users Password</th>
-    <th>Users Roles</th>
-    <th>Action</th>
+    <th>User First Name</th>
+    <th>User Last Name</th>
+    <th>User Email</th>
+    <th>User Username</th>
+    <th>User Password</th>
+    <th>User Roles</th>
+    <th>Actions</th>
     <div th:each="user : ${users}">
         <tr >
             <td th:text="${user.firstName}"></td>
@@ -22,10 +22,14 @@
             <td th:text="${user.email}"></td>
             <td th:text="${user.username}"></td>
             <td th:text="${user.password}"></td>
-
-            <td th:each="role : ${user.getRoles()}">
-                <p th:text="${role.getRole()}"></p>
+            <td>
+                <ul style="list-style-type: none;">
+                    <li th:each="role : ${user.getRoles()}">
+                        <p th:text="${role.getRole()}"></p>
+                    </li>
+                </ul>
             </td>
+
 
             <td><a th:href="@{/update/{id}(id=${user.id})}">Update User</a></td>
             <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete User</a></td>
