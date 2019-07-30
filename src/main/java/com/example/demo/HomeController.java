@@ -23,7 +23,12 @@ public class HomeController {
 
     //Home
     @RequestMapping("/")
-    public String index(){
+    public String index(Model model){
+        //If there is a user logged in get the user
+        model.addAttribute("user", userRepository.findAll());
+        if(userService.getUser() != null) {
+            model.addAttribute("user", userService.getUser());
+        }
         return "index";
     }
 
